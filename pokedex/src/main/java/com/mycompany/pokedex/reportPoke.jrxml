@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="54b173fa-90cc-4474-828d-2178164a8dee">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM test.tb_favoritos;]]>
+	</queryString>
+	<field name="usuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="favoritos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_gustan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="usuario_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{usuario}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="141" y="0" width="249" height="41" uuid="5324e73f-feab-4ac5-b9f3-31fd7f055128"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="32" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Usuarios]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="14" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="23" y="17" width="100" height="20" uuid="3dd6c11a-6ca7-4712-be46-589f1fe913d3"/>
+				<text><![CDATA[usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="17" width="100" height="20" uuid="b7f72797-295b-48e7-83b1-f6c83fbc866d"/>
+				<text><![CDATA[favoritos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="17" width="100" height="20" uuid="5679f97e-7091-4730-bdb5-e60c9f526999"/>
+				<text><![CDATA[no_gustan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="23" y="18" width="100" height="20" uuid="9fb2b7cb-41ca-4958-8efe-10a39dcb809c"/>
+				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="18" width="100" height="20" uuid="bfbb35b8-f254-4200-925c-cb5df8d69502"/>
+				<textFieldExpression><![CDATA[$F{favoritos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="18" width="100" height="20" uuid="3e4ed7f3-3b6c-4d1f-8833-9db011e39db4"/>
+				<textFieldExpression><![CDATA[$F{no_gustan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
